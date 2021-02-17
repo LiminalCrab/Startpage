@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- Injection goes here -->
+    <time-component/>
+    <sites-list site-list-name="Reading"/>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script> // Import components here.
+import TimeComponent from './components/Time.vue'
+import SitesList from './components/SiteList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    TimeComponent,
+    SitesList
+  },
 }
 </script>
 
+<!-- CSS for global -->
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family:serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
+  background-color: #fff;
 }
 </style>
