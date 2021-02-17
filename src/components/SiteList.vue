@@ -9,6 +9,7 @@
            v-for="(site, index) in sites" 
            :key="index"
            :siteName="site.siteName"
+           @site-remove="removeSite(site)"
            />
       </ul>
     </div>
@@ -35,7 +36,11 @@ export default {
     methods: {
         addSite(newSite){
             this.sites.push({ siteName: newSite });
-        }
+        },
+        // create a new array (callback)
+        removeSite(removedSite){
+            this.sites = this.sites.filter(site => site !== removedSite)
+        },
     },
     components: { Site, createSite }
 };

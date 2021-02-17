@@ -3,7 +3,7 @@
 
     <span> {{ siteName }} <!-- array --> </span>
     <button>Edit</button>
-    <button>Remove</button>
+    <button @click="$emit('site-remove')">Remove</button>
 </li>
 </template>
 
