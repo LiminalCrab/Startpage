@@ -10,6 +10,7 @@
            :key="index"
            :siteName="site.siteName"
            @site-remove="removeSite(site)"
+           @site-edit="editSite(site, $event)"
            />
       </ul>
     </div>
@@ -39,8 +40,11 @@ export default {
         },
         // create a new array (callback)
         removeSite(removedSite){
-            this.sites = this.sites.filter(site => site !== removedSite)
+            this.sites = this.sites.filter(site => site !== removedSite);
         },
+        editSite(site, newSiteName){
+            site.siteName = newSiteName;
+        }
     },
     components: { Site, createSite }
 };

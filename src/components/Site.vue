@@ -2,7 +2,15 @@
 <li>
 
     <span> {{ siteName }} <!-- array --> </span>
-    <button>Edit</button>
+        <form @submit.prevent="stopEdit()">
+            <input
+                type="text"
+                v-model="newSiteName"
+                @blur="stopEdit()"
+                ref="fnewSite"
+            />
+        </form>
+    <button @click="doEdit()">Edit</button>
     <button @click="$emit('site-remove')">Remove</button>
 </li>
 </template>
@@ -20,9 +28,22 @@ export default {
         siteName: String,
     },
     methods: {
+        doEdit(){
+            if (this.isEditable){
+                this.stopEdit();
+            } else {
+                this.newSiteName = this.siteName;
+                this.isEditable = true;
+                this.$nextTick(() => this.$refs.fnewSite.focus());
+            }
+        },
+        stopEdit(){
+            this.isEditable = false;
+            this.$emit("site-edit", this.newSiteName)
+        }
        
     }
-}
+};
 </script>
 
 
