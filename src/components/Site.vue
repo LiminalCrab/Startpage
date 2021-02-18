@@ -1,8 +1,11 @@
 <template>
-<li>
-
-    <span> {{ siteName }} <!-- array --> </span>
-        <form @submit.prevent="stopEdit()">
+<div class="container">
+    <li> 
+        <span> {{ siteName }} <!-- array --> </span> 
+        <button @click="doEdit() ; isHidden = !isHidden"> Edit </button>
+        <button @click="$emit('site-remove')">Remove</button>
+    </li>
+    <form @submit.prevent="stopEdit()" v-if="!isHidden">
             <input
                 type="text"
                 v-model="newSiteName"
@@ -10,9 +13,7 @@
                 ref="fnewSite"
             />
         </form>
-    <button @click="doEdit()">Edit</button>
-    <button @click="$emit('site-remove')">Remove</button>
-</li>
+</div>
 </template>
 
 <script>
@@ -21,6 +22,7 @@ export default {
     data: function() {
         return{
             isEditable: false,
+            isHidden: true,
             newSiteName: ""
         };
     }, 
