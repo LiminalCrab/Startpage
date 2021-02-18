@@ -1,8 +1,8 @@
 <template>
 <div class="container">
     <li> 
-        <span> {{ siteName }} <!-- array --> </span> 
-        <button @click="doEdit() ; isHidden = !isHidden"> Edit </button>
+        <span><a :href="staticRef + siteName">{{ siteName }}</a> <!-- array {{ siteName }} --> </span> 
+        <button @click="doEdit() ; isHidden = !isHidden"> Toggle-Edit </button>
         <button @click="$emit('site-remove')">Remove</button>
     </li>
     <form @submit.prevent="stopEdit()" v-if="!isHidden">
@@ -10,7 +10,6 @@
                 type="text"
                 v-model="newSiteName"
                 @blur="stopEdit()"
-                ref="fnewSite"
             />
         </form>
 </div>
@@ -28,6 +27,7 @@ export default {
     }, 
     props: {
         siteName: String,
+        staticRef: String,
     },
     methods: {
         doEdit(){
@@ -36,12 +36,11 @@ export default {
             } else {
                 this.newSiteName = this.siteName;
                 this.isEditable = true;
-                this.$nextTick(() => this.$refs.fnewSite.focus());
             }
         },
         stopEdit(){
             this.isEditable = false;
-            this.$emit("site-edit", this.newSiteName)
+            this.$emit("edit-el", this.newSiteName)
         }
        
     }
@@ -50,5 +49,8 @@ export default {
 
 
 <style scoped>
+.container{
+    border: 1px solid;
+}
 
 </style>

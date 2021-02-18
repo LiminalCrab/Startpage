@@ -2,7 +2,7 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
-    <sites-list site-list-name="Reading"/>
+    <sites-list @changeLabel="setSiteLabel" :siteListLabel="siteListLabel_d"/>
   </div>
 </template>
 
@@ -12,6 +12,17 @@ import SitesList from './components/SiteList.vue'
 
 export default {
   name: 'App',
+  data(){
+      return {
+        siteListLabel_d: "Test"
+      };
+  },
+  methods: { 
+    setSiteLabel(siteListLabel){
+      this.siteListLabel_d = siteListLabel;
+    },
+
+  },
   components: {
     TimeComponent,
     SitesList
