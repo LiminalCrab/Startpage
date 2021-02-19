@@ -1,25 +1,27 @@
 <template>
-    <div>
-
+    <div class="large-container">
+        
+        <sitelist @changeLabel="setSiteLabel" :siteListLabel="siteListLabel_d"/>
     </div>
 </template>
 
 <script>
 
-import sites from "./Site.vue"
-import createsite from "./CreateSite.vue"
 import sitelist from "./SiteList.vue"
-import listcreate from "./ListCreate"
 
 export default {
     name: "list-create",
-    props: {
-
+    data(){
+        return {
+            siteListLabel_d: "Test"
+        };
     },
     methods: {
-
+        setSiteLabel(siteListLabel){
+            this.siteListLabel_d = siteListLabel;
+        },
     },
-    components: { sitelist, createsite, sites, listcreate}  
+    components: { sitelist }  
 };
 
 </script>
