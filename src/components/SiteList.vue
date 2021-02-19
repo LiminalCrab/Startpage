@@ -1,5 +1,5 @@
 <template>
-   <div class="container">
+   <div class="sitelist-container">
         {{  siteListLabel }}
        <form @submit.prevent="changeLabel()">
            <input
@@ -8,7 +8,6 @@
            />
            <button @click="changeLabel"> Change </button>
         </form>
-
        <ul>
            <create-site @on-new-site="addSite($event)" />
            <site
@@ -32,6 +31,7 @@ export default {
     name: "site-list",
     props: {
         siteListLabel: String,
+        
     },
     data(){
         return {

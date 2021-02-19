@@ -9,7 +9,7 @@
 import sitelist from "./SiteList.vue"
 
 export default {
-    name: "list-create",
+    name: "list-container",
     data(){
         return {
             siteListLabel_d: "Test"
@@ -26,5 +26,11 @@ export default {
 </script>
 
 <style scoped>
-
+.large-container{
+    padding: 20px;
+    margin-left: 20px;
+    margin-top: 200px;
+    border: 1px solid;
+    max-width: 400px;
+}
 </style>

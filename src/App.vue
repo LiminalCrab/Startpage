@@ -2,7 +2,11 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
-    <listcontainer/>
+<tr>
+    <td> <listcontainer/> </td>
+    <td> <listcontainer/> </td>
+</tr>
+    
   </div>
 </template>
 
@@ -12,11 +16,11 @@ import listcontainer from "./components/ListContainer.vue"
 
 export default {
   name: 'App',
-
   components: {
     TimeComponent,
     listcontainer,
   },
+  
 }
 </script>
 
