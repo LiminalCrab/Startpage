@@ -1,6 +1,5 @@
 <template>
     <div class="large-container">
-        
         <sitelist @changeLabel="setSiteLabel" :siteListLabel="siteListLabel_d"/>
     </div>
 </template>
