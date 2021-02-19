@@ -2,11 +2,13 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
-<tr>
-    <td> <listcontainer/> </td>
-    <td> <listcontainer/> </td>
-</tr>
-    
+    <table>
+    <tr>
+    <td><listcontainer/></td>
+    <td><listcontainer/></td>
+    <td><div><button>MAKE NEW LIST</button></div></td>
+    </tr>
+    </table>
   </div>
 </template>
 
@@ -20,6 +22,12 @@ export default {
     TimeComponent,
     listcontainer,
   },
+  methods:{
+    addListContainer(){
+    
+    }
+
+  }
   
 }
 </script>

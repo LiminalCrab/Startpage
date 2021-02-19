@@ -12,7 +12,8 @@ export default {
     name: "list-container",
     data(){
         return {
-            siteListLabel_d: "Test"
+            siteListLabel_d: "",
+
         };
     },
     methods: {
