@@ -1,8 +1,8 @@
 <template>
 <div class="container">
-    <li> 
-        <span><a :href="staticRef + siteName">{{ siteName }}</a> <!-- array {{ siteName }} --> </span> 
-        <button @click="doEdit() ; isHidden = !isHidden"> Toggle-Edit </button>
+    <li class="listDec"> 
+        <span><a class="linkDec" :href="staticRef + siteName">{{ siteName }}</a> <!-- array {{ siteName }} --> </span> 
+        <button class="togglebutton" @click="doEdit() ; isHidden = !isHidden"> Toggle-Edit </button>
         <button @click="$emit('site-remove')">Remove</button>
     </li>
     <form @submit.prevent="stopEdit()" v-if="!isHidden">
@@ -51,6 +51,21 @@ export default {
 <style scoped>
 .container{
     border: 1px solid;
+    color: #fff;
+    }
+.container:hover a{
+    background-color: #000;
+    color: white;
 }
+
+.linkDec{
+    text-decoration: none;
+    color: #000;
+}
+
+.listDec{
+    list-style-type: none;
+}
+
 
 </style>

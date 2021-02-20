@@ -10,6 +10,7 @@
         </form>
        <ul>
            <create-site @on-new-site="addSite($event)" />
+           
            <site
            v-for="(site, index) in sites" 
            :key="index"
@@ -31,7 +32,7 @@ export default {
     name: "site-list",
     props: {
         siteListLabel: String,
-        
+
     },
     data(){
         return {

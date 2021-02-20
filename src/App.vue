@@ -2,12 +2,11 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
-    <button @click="addListContainer">New List </button>
-    <table>
-      <tr v-for="item in array" :key="item.id">
-        <td>
+    <table> <button @click="addListContainer">New List </button>
+      <tr>
+        <td v-for="item in array" :key="item.id">
           <listcontainer :item="item"/>
-         </td>
+          </td>
       </tr>
     </table>
   </div>
@@ -39,7 +38,7 @@ export default {
 <!-- CSS for global -->
 <style>
 #app {
-  font-family:serif;
+  font-family:monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

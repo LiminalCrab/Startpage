@@ -39,5 +39,6 @@ export default {
     margin-top: 200px;
     border: 1px solid;
     max-width: 400px;
+
 }
 </style>
