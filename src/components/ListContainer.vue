@@ -10,6 +10,12 @@ import sitelist from "./SiteList.vue"
 
 export default {
     name: "list-container",
+    props: {
+        item: {
+            type: Object,
+            required: true
+        }
+    },
     data(){
         return {
             siteListLabel_d: "",

@@ -2,12 +2,13 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
+    <button @click="addListContainer">New List </button>
     <table>
-    <tr>
-    <td><listcontainer/></td>
-    <td><listcontainer/></td>
-    <td><div><button>MAKE NEW LIST</button></div></td>
-    </tr>
+      <tr v-for="item in array" :key="item.id">
+        <td>
+          <listcontainer :item="item"/>
+         </td>
+      </tr>
     </table>
   </div>
 </template>
@@ -22,9 +23,12 @@ export default {
     TimeComponent,
     listcontainer,
   },
+  data(){
+    return { array: [] };
+  },
   methods:{
     addListContainer(){
-    
+    this.array.push({id: Math.random() })
     }
 
   }
