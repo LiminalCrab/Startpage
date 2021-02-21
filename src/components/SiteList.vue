@@ -29,6 +29,7 @@
 
 import Site from "./Site.vue"
 import createSite from "./CreateSite.vue"
+import '@/assets/list.css'
 
 export default {
     name: "site-list",

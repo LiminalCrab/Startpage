@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import '@/assets/list.css'
+
 export default {
     data: function(){ 
         return{

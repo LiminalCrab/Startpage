@@ -7,6 +7,7 @@
 <script>
 
 import sitelist from "./SiteList.vue"
+import '@/assets/list.css'
 
 export default {
     name: "list-container",
@@ -50,4 +51,6 @@ export default {
 
 
 </style>
+
+
 
