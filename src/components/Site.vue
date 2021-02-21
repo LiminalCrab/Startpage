@@ -1,12 +1,12 @@
 <template>
-<div class="container">
-    <li class="listDec"> 
-        <span><a class="linkDec" :href="staticRef + siteName">{{ siteName }}</a> <!-- array {{ siteName }} --> </span> 
-        <button class="togglebutton" @click="doEdit() ; isHidden = !isHidden"> Toggle-Edit </button>
-        <button @click="$emit('site-remove')">Remove</button>
+<div class="c-site-container">
+    <li class="c-list"> 
+        <span class="c-spanlol"><a class="c-anc" :href="staticRef + siteName">{{ siteName }}</a> <!-- array {{ siteName }} --> </span> 
+        <button class="c-btn" @click="doEdit() ; isHidden = !isHidden"> Toggle-Edit </button>
+        <button class="c-btn" @click="$emit('site-remove')">Remove</button>
     </li>
-    <form @submit.prevent="stopEdit()" v-if="!isHidden">
-            <input
+    <form class="c-form" @submit.prevent="stopEdit()" v-if="!isHidden">
+            <input class="c-input"
                 type="text"
                 v-model="newSiteName"
                 @blur="stopEdit()"
@@ -49,23 +49,4 @@ export default {
 
 
 <style scoped>
-.container{
-    border: 1px solid;
-    color: #fff;
-    }
-.container:hover a{
-    background-color: #000;
-    color: #fff;
-}
-
-.linkDec{
-    text-decoration: none;
-    color: #000;
-}
-
-.listDec{
-    list-style-type: none;
-}
-
-
 </style>

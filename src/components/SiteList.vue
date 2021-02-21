@@ -1,16 +1,18 @@
 <template>
-   <div class="sitelist-container">
+   <div class="child-sitelist-container">
+
         {{  siteListLabel }}
-       <form @submit.prevent="changeLabel()">
-           <input
+
+       <form class="c-form" @submit.prevent="changeLabel()">
+           <input class="c-input"
            type="text"
            v-model="siteListLabel_d"
            />
-           <button @click="changeLabel"> Change </button>
+           <button class="c-btn" @click="changeLabel"> Change </button>
         </form>
-       <ul>
+
+       <ul class="c-ul">
            <create-site @on-new-site="addSite($event)" />
-           
            <site
            v-for="(site, index) in sites" 
            :key="index"
@@ -19,7 +21,6 @@
            @site-remove="removeSite(site)"
            @edit-el="editSite(site, $event)"
            />
-
       </ul>
     </div>
 </template>
@@ -68,7 +69,5 @@ export default {
 </script>
 
 <style scoped>
-.sitelist-container:hover{
-    color: #fff;
-}
+
 </style>

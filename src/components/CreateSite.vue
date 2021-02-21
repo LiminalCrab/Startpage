@@ -1,6 +1,6 @@
 <template>
-    <form @submit.prevent="addSite()">
-    <input
+    <form class="c-form" @submit.prevent="addSite()">
+    <input class="c-input"
     v-model="newSite"
     type="text"
     placeholder="Add a new site..."

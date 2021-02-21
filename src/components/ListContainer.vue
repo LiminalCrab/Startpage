@@ -1,5 +1,5 @@
 <template>
-    <div class="large-container">
+    <div class="parent-listcontainer">
         <sitelist @changeLabel="setSiteLabel" :siteListLabel="siteListLabel_d"/>
     </div>
 </template>
@@ -32,14 +32,22 @@ export default {
 
 </script>
 
+
 <style scoped>
-.large-container{
+.parent-listcontainer{
     padding: 20px;
     margin-left: 20px;
     margin-top: 200px;
     border: 1px solid;
     max-width: 400px;
-    background-color: #fff;
-
+    background-color: rgb(255, 255, 255);
 }
+
+.parent-listcontainer:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+
 </style>
+

@@ -2,11 +2,11 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
-    <table>
-      <tr>
-        <button @click="addListContainer">New List </button>
-        <td v-for="item in array" :key="item.id">
-          <listcontainer class="listcontainerDecor" :item="item"/>
+    <table class="root-tbl">
+      <tr class="root-tbl-tr">
+        <button class="root-btn" @click="addListContainer">New List </button>
+        <td class="root-td" v-for="item in array" :key="item.id">
+          <listcontainer class="root-listcontainer" :item="item"/>
           </td>
       </tr>
     </table>
@@ -45,11 +45,5 @@ export default {
   text-align: center;
   margin-top: 60px;
   background-color: #fff;
-}
-
-.listcontainerDecor:hover{
-  background-color: black;
-  color: #fff;
-
 }
 </style>
