@@ -55,7 +55,7 @@ export default {
     }
 .container:hover a{
     background-color: #000;
-    color: white;
+    color: #fff;
 }
 
 .linkDec{

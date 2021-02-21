@@ -18,7 +18,7 @@ export default {
     },
     data(){
         return {
-            siteListLabel_d: "",
+            siteListLabel_d: "Title",
 
         };
     },
@@ -39,6 +39,7 @@ export default {
     margin-top: 200px;
     border: 1px solid;
     max-width: 400px;
+    background-color: #fff;
 
 }
 </style>

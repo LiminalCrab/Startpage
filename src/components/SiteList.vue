@@ -19,6 +19,7 @@
            @site-remove="removeSite(site)"
            @edit-el="editSite(site, $event)"
            />
+
       </ul>
     </div>
 </template>
@@ -67,5 +68,7 @@ export default {
 </script>
 
 <style scoped>
-
+.sitelist-container:hover{
+    color: #fff;
+}
 </style>
