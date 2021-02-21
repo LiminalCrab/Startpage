@@ -8,7 +8,7 @@
            type="text"
            v-model="siteListLabel_d"
            />
-           <button class="c-btn" @click="changeLabel"> Change </button>
+           <button class="c-btn-change" @click="changeLabel"> Change </button>
         </form>
 
        <ul class="c-ul">

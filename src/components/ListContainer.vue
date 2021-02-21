@@ -35,21 +35,6 @@ export default {
 
 
 <style scoped>
-.parent-listcontainer{
-    padding: 20px;
-    margin-left: 20px;
-    margin-top: 200px;
-    border: 1px solid;
-    max-width: 400px;
-    background-color: rgb(255, 255, 255);
-}
-
-.parent-listcontainer:hover{
-    background-color: #000;
-    color: #fff;
-}
-
-
 </style>
 
 
