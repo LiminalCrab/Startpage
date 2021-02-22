@@ -1,3 +1,4 @@
+
 .parent-listcontainer{
     padding: 20px;
     margin-left: 20px;
@@ -31,6 +32,10 @@
 
 .c-btn-change{
     display: none;
+}
+
+.c-label-span{
+    font-size: 17px;
 }
 
 

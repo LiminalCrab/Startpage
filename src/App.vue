@@ -6,7 +6,7 @@
       <tr class="root-tbl-tr">
         <button class="root-btn" @click="addListContainer">New List </button>
         <td class="root-td" v-for="item in array" :key="item.id">
-          <listcontainer class="root-listcontainer" :item="item"/>
+          <listcontainer class="root-listcontainer-i" :item="item"/>
           </td>
       </tr>
     </table>
@@ -32,14 +32,14 @@ export default {
     }
 
   }
-  
+
 }
 </script>
 
 <!-- CSS for global -->
 <style>
 #app {
-  font-family:monospace;
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

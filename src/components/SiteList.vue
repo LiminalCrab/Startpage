@@ -1,7 +1,7 @@
 <template>
    <div class="child-sitelist-container">
 
-        {{  siteListLabel }}
+        <span class="c-label-span">{{  siteListLabel }}</span>
 
        <form class="c-form" @submit.prevent="changeLabel()">
            <input class="c-input"
