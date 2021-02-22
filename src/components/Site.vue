@@ -2,7 +2,7 @@
 <div class="c-site-container">
     <li class="c-list"> 
         <span class="c-spanlol"><a class="c-anc" :href="staticRef + siteName">{{ siteName }}</a> <!-- array {{ siteName }} --> </span> 
-        <button class="c-btn" @click="doEdit() ; isHidden = !isHidden"> Toggle-Edit </button>
+        <button class="c-btn" @click="doEdit() ; isHidden = !isHidden">+</button>
         <button class="c-btn" @click="$emit('site-remove')">Remove</button>
     </li>
     <form class="c-form" @submit.prevent="stopEdit()" v-if="!isHidden">
@@ -16,10 +16,8 @@
 </template>
 
 <script>
-import '@/assets/list.css'
 
 export default {
-
     data: function() {
         return{
             isEditable: false,
@@ -48,7 +46,6 @@ export default {
     }
 };
 </script>
-
 
 <style scoped>
 </style>
