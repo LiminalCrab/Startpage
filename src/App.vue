@@ -2,10 +2,9 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
-    <icon-base width="20" height="20" iconColor="black" icon-name="list"><icon-list /></icon-base>
     <table class="root-tbl">
       <tr class="root-tbl-tr">
-        <button class="root-btn" @click="addListContainer">New List </button>
+        <button class="root-btn" @click="addListContainer"><nav-list-btn/></button>
         <td class="root-td" v-for="item in array" :key="item.id">
           <listcontainer class="root-listcontainer-i" :item="item"/>
           </td>
@@ -19,8 +18,7 @@ import TimeComponent from './components/Time.vue'
 import listcontainer from "./components/ListContainer.vue"
 
 //Icons
-import IconBase from './components/IconBase.vue'
-import IconList from './components/navigation/icons/IconList.vue'
+import NavListBtn from './components/NavListBtn.vue'
 
 export default {
   name: 'App',
@@ -29,8 +27,7 @@ export default {
     listcontainer,
     
     //icons
-    IconBase,
-    IconList,
+  NavListBtn
   },
   data(){
     return { array: [] };
@@ -54,5 +51,15 @@ export default {
   text-align: center;
   margin-top: 60px;
   background-color: #fff;
+}
+
+.root-btn{
+  cursor: pointer;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 0;
+    outline:none;
 }
 </style>

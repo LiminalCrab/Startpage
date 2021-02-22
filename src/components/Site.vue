@@ -67,6 +67,8 @@ export default {
     cursor: pointer;
     margin-left: 10px;
     padding: 0;
+    outline:none;
+
 }
 
 </style>
