@@ -2,7 +2,7 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
-    <icon-base width="20" height="20" iconColor="black" icon-name="edit"><icon-edit /></icon-base>
+    <icon-base width="20" height="20" iconColor="black" icon-name="list"><icon-list /></icon-base>
     <table class="root-tbl">
       <tr class="root-tbl-tr">
         <button class="root-btn" @click="addListContainer">New List </button>
@@ -20,7 +20,7 @@ import listcontainer from "./components/ListContainer.vue"
 
 //Icons
 import IconBase from './components/IconBase.vue'
-import IconEdit from './components/navigation/icons/IconEdit.vue'
+import IconList from './components/navigation/icons/IconList.vue'
 
 export default {
   name: 'App',
@@ -30,7 +30,7 @@ export default {
     
     //icons
     IconBase,
-    IconEdit
+    IconList,
   },
   data(){
     return { array: [] };
