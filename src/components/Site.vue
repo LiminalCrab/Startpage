@@ -45,8 +45,8 @@ export default {
             if (this.isEditable){
                 this.stopEdit();
             } else {
-                this.newSiteName = this.siteName;
-                this.isEditable = true;           
+                this.isEditable = true;
+                this.newSiteName = this.siteName;          
                 }
         },
         stopEdit(){
