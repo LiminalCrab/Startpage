@@ -1,5 +1,5 @@
 <template>
-<span><icon-base class="button" :height="10" :width="10"><icon-edit/></icon-base></span>
+<span><icon-base height="10" width="10"><icon-edit/></icon-base></span>
 </template>
 
 <script>
@@ -10,9 +10,3 @@ export default {
     components: {IconBase, IconEdit},
 }
 </script>
-
-<style scoped>
-.button{
-    cursor: pointer;
-}
-</style>

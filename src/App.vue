@@ -2,7 +2,6 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
-    <icon-base><icon-remove/></icon-base>
     <table class="root-tbl">
       <tr class="root-tbl-tr">
         <button class="root-btn" @click="addListContainer"><nav-list-btn/></button>
@@ -17,9 +16,6 @@
 <script> // Import components here.
 import TimeComponent from './components/Time.vue'
 import listcontainer from "./components/ListContainer.vue"
-//icons test
-import IconBase from './components/IconBase.vue'
-import IconRemove from './components/navigation/icons/IconRemove.vue'
 
 //Icons
 import NavListBtn from './components/NavListBtn.vue'
@@ -29,9 +25,6 @@ export default {
   components: {
     TimeComponent,
     listcontainer,
-    //icons test
-    IconBase,
-    IconRemove,
 
     //icons
     NavListBtn

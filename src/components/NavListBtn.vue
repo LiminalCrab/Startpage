@@ -1,5 +1,5 @@
 <template>
-<span><icon-base class="button"><icon-list/></icon-base></span>
+<span><icon-base><icon-list/></icon-base></span>
 </template>
 
 <script>
@@ -10,9 +10,3 @@ export default {
     components: {IconBase, IconList},
 }
 </script>
-
-<style scoped>
-.button{
-    cursor: pointer;
-}
-</style>

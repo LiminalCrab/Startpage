@@ -10,9 +10,3 @@ export default {
     components: {IconBase, IconChange},
 }
 </script>
-
-<style scoped>
-.button{
-    cursor: pointer;
-}
-</style>
