@@ -39,13 +39,11 @@ export default {
     this.array.push({id: Math.random() })
       } else {
         console.log("You can't create more of these components...")
-
       }
-    }
+    },
+  },
 
-  }
-
-}
+};
 </script>
 
 <!-- CSS for global -->

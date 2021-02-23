@@ -33,13 +33,12 @@ import createSite from "./CreateSite.vue"
 import '@/assets/list.css'
 
 //icon
-import NavChangeBtn from './NavChangeBtn.vue'
+import NavChangeBtn from './NavChangeBtn.vue';
 
 export default {
     name: "site-list",
     props: {
         siteListLabel: String,
-
     },
     data(){
         return {
@@ -52,6 +51,10 @@ export default {
             siteListLabel_d: ""
         };
     },
+    created(){
+        this.sites = JSON.parse(localStorage.getItem("site") || "[]")
+    },
+
     methods: {
         addSite(newSite){
             if(this.sites.length < 5){
@@ -59,10 +62,12 @@ export default {
             } else {
                 console.log("You can't add anymore.")
             }
+            localStorage.setItem("site", JSON.stringify(this.sites));
         },
         // create a new array (callback)
         removeSite(removedSite){
             this.sites = this.sites.filter(site => site !== removedSite);
+            localStorage.setItem("site", JSON.stringify(this.sites))
         },
         editSite(site, newSiteName){
             site.siteName = newSiteName;

@@ -10,7 +10,7 @@
             <input class="c-input"
                 type="text"
                 v-model="newSiteName"
-                @blur="stopEdit()"
+                @click="stopEdit()"
             />
         </form>
 </div>
@@ -52,7 +52,17 @@ export default {
         stopEdit(){
             this.isEditable = false;
             this.$emit("edit-el", this.newSiteName)
+        },
+        getData(){
+            console.log('getting data');
+            return localStorage.getItem('newSiteName');
+        },
+        setData(){
+            console.log("Saved to local storage.");
+            localStorage.setItem('newSiteName', this.newSiteName );
+            this.newSiteName = this.getData();
         }
+        
        
     }
 };
@@ -68,7 +78,6 @@ export default {
     margin-left: 10px;
     padding: 0;
     outline:none;
-
 }
 
 </style>
