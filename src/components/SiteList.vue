@@ -8,7 +8,7 @@
            type="text"
            v-model="siteListLabel_d"
            />
-           <button class="c-btn-change" @click="changeLabel"> Change </button>
+           <button class="c-btn-change" @click="changeLabel"> <nav-change-btn/> </button>
         </form>
 
        <ul class="c-ul">
@@ -30,6 +30,9 @@
 import Site from "./Site.vue"
 import createSite from "./CreateSite.vue"
 import '@/assets/list.css'
+
+//icon
+import NavChangeBtn from './NavChangeBtn.vue'
 
 export default {
     name: "site-list",
@@ -67,7 +70,7 @@ export default {
             //this.siteListLabel = this.siteListLabel_d
         }
     },
-    components: { Site, createSite }
+    components: { Site, createSite, NavChangeBtn }
 };
 
 </script>
