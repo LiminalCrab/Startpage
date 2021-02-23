@@ -19,7 +19,7 @@ export default {
     },
     data(){
         return {
-            siteListLabel_d: "Test",
+            siteListLabel_d: "Title",
 
         };
     },
@@ -32,10 +32,5 @@ export default {
 };
 
 </script>
-
-
-<style scoped>
-</style>
-
 
 

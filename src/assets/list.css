@@ -1,5 +1,22 @@
 /* Root CSS is done in the Root style tag.*/
 
+input[type=text]{
+    background-color: rgba(182, 178, 178, 0.2);
+}
+
+input[type=text]:focus{
+    background-color: white;
+    outline: 2px solid white;
+}
+
+::placeholder{
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.c-createsite{
+    padding-top: 15px;
+}
+
 .parent-listcontainer{
     padding: 20px;
     margin-left: 20px;
@@ -44,6 +61,7 @@
 .c-label-span{
     font-size: 17px;
 }
+
 
 
 

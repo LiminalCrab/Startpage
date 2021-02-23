@@ -7,12 +7,12 @@
            <input class="c-input"
            type="text"
            v-model="siteListLabel_d"
+           placeholder="Change title..."
            />
            <button class="c-btn-change" @click="changeLabel"> <nav-change-btn/> </button>
         </form>
 
        <ul class="c-ul">
-           <create-site @on-new-site="addSite($event)" />
            <site
            v-for="(site, index) in sites" 
            :key="index"
@@ -21,6 +21,7 @@
            @site-remove="removeSite(site)"
            @edit-el="editSite(site, $event)"
            />
+        <create-site class="c-createsite" @on-new-site="addSite($event)" />
       </ul>
     </div>
 </template>
@@ -53,7 +54,11 @@ export default {
     },
     methods: {
         addSite(newSite){
+            if(this.sites.length < 5){
             this.sites.push({ staticRef: "https://", siteName: newSite });
+            } else {
+                console.log("You can't add anymore.")
+            }
         },
         // create a new array (callback)
         removeSite(removedSite){

@@ -35,7 +35,12 @@ export default {
   },
   methods:{
     addListContainer(){
+      if(this.array.length < 4){
     this.array.push({id: Math.random() })
+      } else {
+        console.log("You can't create more of these components...")
+
+      }
     }
 
   }
@@ -59,8 +64,10 @@ export default {
     border: none;
     background: none;
     cursor: pointer;
-    margin-left: 10px;
+    margin-left: 310px;
+    margin-top: 190px;
     padding: 0;
     outline:none;
 }
+
 </style>
