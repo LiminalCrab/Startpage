@@ -1,5 +1,5 @@
 <template>
-<span><icon-base class="button"><icon-edit/></icon-base></span>
+<span><icon-base class="button" :height="10" :width="10"><icon-edit/></icon-base></span>
 </template>
 
 <script>
@@ -8,10 +8,6 @@ import IconEdit from './navigation/icons/IconEdit.vue';
 
 export default {
     components: {IconBase, IconEdit},
-    props:{
-
-
-    }
 }
 </script>
 

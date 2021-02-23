@@ -19,7 +19,7 @@ export default {
     },
     data(){
         return {
-            siteListLabel_d: "Title",
+            siteListLabel_d: "Test",
 
         };
     },

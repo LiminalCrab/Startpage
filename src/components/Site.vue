@@ -4,7 +4,7 @@
         <span class="c-spanlol"><a class="c-anc" :href="staticRef + siteName">{{ siteName }}</a>
          <!-- array {{ siteName }} --> </span> 
         <button class="c-btn" @click="doEdit() ; isHidden = !isHidden"><nav-edit-btn/></button>
-        <button class="c-btn" @click="$emit('site-remove')">Remove</button>
+        <button class="c-btn" @click="$emit('site-remove')"><nav-remove-btn/></button>
     </li>
     <form class="c-form" @submit.prevent="stopEdit()" v-if="!isHidden">
             <input class="c-input"
@@ -19,11 +19,13 @@
 <script>
 
 import NavEditBtn from './NavEditBtn.vue'
+import NavRemoveBtn from './NavRemoveBtn.vue'
 
 export default {
 
     components: {
-        NavEditBtn
+        NavEditBtn,
+        NavRemoveBtn,
     },
 
     data: function() {
@@ -42,12 +44,10 @@ export default {
         doEdit(){
             if (this.isEditable){
                 this.stopEdit();
-                console.log("Clicked");
             } else {
                 this.newSiteName = this.siteName;
-                this.isEditable = true;
-                console.log("Clicked");
-            }
+                this.isEditable = true;           
+                }
         },
         stopEdit(){
             this.isEditable = false;

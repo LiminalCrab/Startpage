@@ -60,7 +60,10 @@ export default {
             site.siteName = newSiteName;
         },
         changeLabel(){
+            if (this.siteListLabel_d.length > 0){
             this.$emit("changeLabel", this.siteListLabel_d);
+            this.siteListLabel_d = "";
+            }
             //this.siteListLabel = this.siteListLabel_d
         }
     },

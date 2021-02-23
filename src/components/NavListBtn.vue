@@ -8,10 +8,6 @@ import IconList from './navigation/icons/IconList.vue';
 
 export default {
     components: {IconBase, IconList},
-    props:{
-
-
-    }
 }
 </script>
 

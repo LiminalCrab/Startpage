@@ -21,6 +21,7 @@ export default {
         addSite(){
             if (this.newSite.length > 0){
                 this.$emit("on-new-site", this.newSite);
+                this.newSite = "";
             }
         }
 
