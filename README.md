@@ -1,24 +1,4 @@
 # startpage
+This is a mockup startpage I'm making for Firefox.
+It will never actually function as a startpage, because this requires a server to run, but I am just using it as a simple tool try Vue out.
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

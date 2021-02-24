@@ -20,6 +20,8 @@ import listcontainer from "./components/ListContainer.vue"
 //Icons
 import NavListBtn from './components/NavListBtn.vue'
 
+const AKEY = "array-storage";
+
 export default {
   name: 'App',
   components: {
@@ -33,6 +35,11 @@ export default {
   data(){
     return { array: [] };
   },
+  created(){
+    this.sites = JSON.parse(localStorage.getItem(AKEY))
+    console.log("Getting storage from App.vue in item")
+
+  },
   methods:{
     addListContainer(){
       if(this.array.length < 4){
@@ -40,6 +47,9 @@ export default {
       } else {
         console.log("You can't create more of these components...")
       }
+    localStorage.setItem(AKEY, JSON.stringify(this.array))
+    console.log("set storage in App.vue array.")
+
     },
   },
 

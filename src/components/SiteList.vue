@@ -34,6 +34,7 @@ import '@/assets/list.css'
 
 //icon
 import NavChangeBtn from './NavChangeBtn.vue';
+const SKEY = "site-storage";
 
 export default {
     name: "site-list",
@@ -49,10 +50,12 @@ export default {
             // Shouldn't edit props so I made this which is based off
             // the value of the prop but not using the prop directly.
             siteListLabel_d: ""
+
         };
     },
     created(){
-        this.sites = JSON.parse(localStorage.getItem("site") || "[]")
+        this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
+        console.log("Getting storage from SiteList.vue in Site")
     },
 
     methods: {
@@ -62,12 +65,13 @@ export default {
             } else {
                 console.log("You can't add anymore.")
             }
-            localStorage.setItem("site", JSON.stringify(this.sites));
+            localStorage.setItem(SKEY, JSON.stringify(this.sites));
+            console.log("Setting storage for site in Sitelist.vue")
         },
         // create a new array (callback)
         removeSite(removedSite){
             this.sites = this.sites.filter(site => site !== removedSite);
-            localStorage.setItem("site", JSON.stringify(this.sites))
+            localStorage.setItem(SKEY, JSON.stringify(this.sites))
         },
         editSite(site, newSiteName){
             site.siteName = newSiteName;
@@ -75,9 +79,11 @@ export default {
         changeLabel(){
             if (this.siteListLabel_d.length > 0){
             this.$emit("changeLabel", this.siteListLabel_d);
+            localStorage.setItem("label", JSON.stringify(this.siteListLabel_d))
+            console.log("Setting storage for siteListLabel_d in Sitelist.vue")
+
             this.siteListLabel_d = "";
             }
-            //this.siteListLabel = this.siteListLabel_d
         }
     },
     components: { Site, createSite, NavChangeBtn }
