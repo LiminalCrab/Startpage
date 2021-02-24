@@ -18,6 +18,7 @@
            :key="index"
            :siteName="site.siteName"
            :staticRef="site.staticRef"
+           :aIdent="sites.aIdent"
            @site-remove="removeSite(site)"
            @edit-el="editSite(site, $event)"
            />
@@ -34,7 +35,8 @@ import '@/assets/list.css'
 
 //icon
 import NavChangeBtn from './NavChangeBtn.vue';
-const SKEY = "list-container-storage";
+const SKEY = "site-list-data";
+let aIdent = 0;
 
 export default {
     name: "site-list",
@@ -43,9 +45,9 @@ export default {
     },
     data(){
         return {
-            sites: [ { staticRef: "https://", siteName: "www.cnn.com" }, 
-                     { staticRef: "https://", siteName: "www.nyt.com" }, 
-                     { staticRef: "https://", siteName: "washingtonpost.com" }
+            sites: [ {aIdent: 1, Title: "Title1", staticRef: "https://", siteName: "www.cnn.com" }, 
+                     {aIdent: 2, Title: "Title2", staticRef: "https://", siteName: "www.nyt.com" }, 
+                     {aIdent: 3, Title: "Title3", staticRef: "https://", siteName: "washingtonpost.com" }
             ],
             // Shouldn't edit props so I made this which is based off
             // the value of the prop but not using the prop directly.
@@ -53,6 +55,10 @@ export default {
 
         };
     },
+    beforeCreate(){
+    this.aIdent = aIdent.toString();
+    },
+
     created(){
         this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
         console.log("Getting storage from SiteList.vue in Site")
@@ -61,7 +67,7 @@ export default {
     methods: {
         addSite(newSite){
             if(this.sites.length < 5){
-            this.sites.push({ staticRef: "https://", siteName: newSite });
+            this.sites.push({ aIdent: aIdent, staticRef: "https://", siteName: newSite });
             } else {
                 console.log("You can't add anymore.")
             }

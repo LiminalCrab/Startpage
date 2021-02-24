@@ -10,12 +10,11 @@ import sitelist from "./SiteList.vue"
 import '@/assets/list.css'
 
 export default {
-    name: "list-container",
     props: {
         item: {
             type: Object,
             required: true
-        }
+        },
     },
     data(){
         return {

@@ -20,7 +20,7 @@ import listcontainer from "./components/ListContainer.vue"
 //Icons
 import NavListBtn from './components/NavListBtn.vue'
 
-const AKEY = "list-container-storage";
+const AKEY = "list-obj-storage";
 let uuid = 0;
 
 export default {
@@ -49,7 +49,7 @@ export default {
 
   methods:{
     addListContainer(){
-      if(this.array.length < 4){
+      if(this.array.length < 5){
     this.array.push({id: ++uuid})
       } else {
         console.log("You can't create more of these components...")
