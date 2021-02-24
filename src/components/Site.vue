@@ -53,17 +53,6 @@ export default {
             this.isEditable = false;
             this.$emit("edit-el", this.newSiteName)
         },
-        getData(){
-            console.log('getting data');
-            return localStorage.getItem('newSiteName');
-        },
-        setData(){
-            console.log("Saved to local storage.");
-            localStorage.setItem('newSiteName', this.newSiteName );
-            this.newSiteName = this.getData();
-        }
-        
-       
     }
 };
 </script>

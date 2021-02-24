@@ -34,7 +34,7 @@ import '@/assets/list.css'
 
 //icon
 import NavChangeBtn from './NavChangeBtn.vue';
-const SKEY = "site-storage";
+const SKEY = "list-container-storage";
 
 export default {
     name: "site-list",
