@@ -21,6 +21,7 @@ import listcontainer from "./components/ListContainer.vue"
 import NavListBtn from './components/NavListBtn.vue'
 
 const AKEY = "array-storage";
+let uuid = 0;
 
 export default {
   name: 'App',
@@ -32,8 +33,14 @@ export default {
     NavListBtn
   
   },
+  beforeCreate(){
+    this.uuid = uuid.toString();
+  },
+
   data(){
-    return { array: [] };
+    return { 
+      array: [] 
+      };
   },
   created(){
     this.sites = JSON.parse(localStorage.getItem(AKEY))
@@ -43,7 +50,7 @@ export default {
   methods:{
     addListContainer(){
       if(this.array.length < 4){
-    this.array.push({id: Math.random() })
+    this.array.push({id: ++uuid})
       } else {
         console.log("You can't create more of these components...")
       }
