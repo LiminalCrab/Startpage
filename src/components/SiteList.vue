@@ -45,9 +45,9 @@ export default {
     },
     data(){
         return {
-            sites: [ {aIdent: 1, Title: "Title1", staticRef: "https://", siteName: "www.cnn.com" }, 
-                     {aIdent: 2, Title: "Title2", staticRef: "https://", siteName: "www.nyt.com" }, 
-                     {aIdent: 3, Title: "Title3", staticRef: "https://", siteName: "washingtonpost.com" }
+            sites: [ {aIdent: 1, staticRef: "https://", siteName: "www.cnn.com" }, 
+                     {aIdent: 2, staticRef: "https://", siteName: "www.nyt.com" }, 
+                     {aIdent: 3, staticRef: "https://", siteName: "washingtonpost.com" }
             ],
             // Shouldn't edit props so I made this which is based off
             // the value of the prop but not using the prop directly.
@@ -85,9 +85,6 @@ export default {
         changeLabel(){
             if (this.siteListLabel_d.length > 0){
             this.$emit("changeLabel", this.siteListLabel_d);
-            localStorage.setItem("label", JSON.stringify(this.siteListLabel_d))
-            console.log("Setting storage for siteListLabel_d in Sitelist.vue")
-
             this.siteListLabel_d = "";
             }
         }

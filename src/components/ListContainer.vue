@@ -9,6 +9,8 @@
 import sitelist from "./SiteList.vue"
 import '@/assets/list.css'
 
+const LKey = "list-label-data"
+
 export default {
     props: {
         item: {
@@ -25,6 +27,7 @@ export default {
     methods: {
         setSiteLabel(siteListLabel){
             this.siteListLabel_d = siteListLabel;
+            localStorage.setItem(LKey, JSON.stringify(this.siteListLabel_d));
         },
     },
     components: { sitelist }  
