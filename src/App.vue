@@ -35,7 +35,7 @@ export default {
   },
   beforeCreate(){
     this.uuid = uuid.toString();
-    this.sites = JSON.parse(localStorage.getItem(AKEY))
+    this.item = JSON.parse(localStorage.getItem(AKEY))
   },
 
   data(){
@@ -50,6 +50,7 @@ export default {
     addListContainer(){
       if(this.array.length < 3){
     this.array.push({id: ++uuid})
+    localStorage.setItem(AKEY, JSON.stringify(this.array))
       } else {
         console.log("You can't create more of these components...")
       }
