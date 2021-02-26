@@ -35,7 +35,6 @@ export default {
   },
   beforeCreate(){
     this.uuid = uuid.toString();
-    this.item = JSON.parse(localStorage.getItem(AKEY))
   },
 
   data(){
@@ -44,6 +43,7 @@ export default {
       };
   },
   created(){
+    this.array = JSON.parse(localStorage.getItem(AKEY))
   },
 
   methods:{

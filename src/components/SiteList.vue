@@ -36,7 +36,7 @@ import '@/assets/list.css'
 //icon
 import NavChangeBtn from './NavChangeBtn.vue';
 const SKEY = "site-list-data";
-let aIdent = 0;
+let uuid = 1;
 
 export default {
     name: "site-list",
@@ -56,8 +56,8 @@ export default {
         };
     },
     beforeCreate(){
-    this.aIdent = aIdent.toString();
-    },
+    this.uuid = uuid.toString();
+        },
 
     created(){
         this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
@@ -66,8 +66,8 @@ export default {
 
     methods: {
         addSite(newSite){
-            if(this.sites.length < 5){
-            this.sites.push({ aIdent: aIdent, staticRef: "https://", siteName: newSite });
+            if(this.sites.length < 15){
+            this.sites.push({ aIdent: ++uuid, staticRef: "https://", siteName: newSite });
             } else {
                 console.log("You can't add anymore.")
             }
