@@ -43,7 +43,7 @@ export default {
       };
   },
   created(){
-    this.item = JSON.parse(localStorage.getItem(AKEY))
+    this.array = JSON.parse(localStorage.getItem(AKEY))
   },
 
   methods:{

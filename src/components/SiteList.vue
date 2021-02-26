@@ -60,7 +60,7 @@ export default {
         },
 
     created(){
-        this.sites = JSON.parse(localStorage.getItem(SKEY))
+        this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
         console.log("Getting storage from SiteList.vue in Site")
     },
 
@@ -72,7 +72,7 @@ export default {
             } else {
                 console.log("You can't add anymore.")
             }
-        },
+                    },
         // create a new array (callback)
         removeSite(removedSite){
             this.sites = this.sites.filter(site => site !== removedSite);
