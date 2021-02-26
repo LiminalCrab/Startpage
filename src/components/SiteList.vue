@@ -60,7 +60,7 @@ export default {
         },
 
     created(){
-        this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
+        this.sites = JSON.parse(localStorage.getItem(SKEY))
         console.log("Getting storage from SiteList.vue in Site")
     },
 
@@ -68,11 +68,10 @@ export default {
         addSite(newSite){
             if(this.sites.length < 15){
             this.sites.push({ aIdent: ++uuid, staticRef: "https://", siteName: newSite });
+            localStorage.setItem(SKEY, JSON.stringify(this.sites));
             } else {
                 console.log("You can't add anymore.")
             }
-            localStorage.setItem(SKEY, JSON.stringify(this.sites));
-            console.log("Setting storage for site in Sitelist.vue")
         },
         // create a new array (callback)
         removeSite(removedSite){
