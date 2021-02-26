@@ -21,7 +21,7 @@ import listcontainer from "./components/ListContainer.vue"
 import NavListBtn from './components/NavListBtn.vue'
 
 const AKEY = "list-obj-storage";
-let uuid = 0;
+let uuid = 1;
 
 export default {
   name: 'App',
@@ -35,27 +35,24 @@ export default {
   },
   beforeCreate(){
     this.uuid = uuid.toString();
+    this.sites = JSON.parse(localStorage.getItem(AKEY))
   },
 
   data(){
     return { 
-      array: [] 
+      array: [{id: 1}] 
       };
   },
   created(){
-    this.sites = JSON.parse(localStorage.getItem(AKEY))
-    console.log("Getting storage from App.vue in item")
   },
 
   methods:{
     addListContainer(){
-      if(this.array.length < 5){
+      if(this.array.length < 3){
     this.array.push({id: ++uuid})
       } else {
         console.log("You can't create more of these components...")
       }
-    localStorage.setItem(AKEY, JSON.stringify(this.array))
-    console.log("set storage in App.vue array.")
     },
   },
 
