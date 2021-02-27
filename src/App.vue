@@ -52,7 +52,7 @@ export default {
 
     data(){
     return { 
-      array: [{id: "1", title: "title1", siteName:["www.penis.com"]}],
+      array: [{id: "1", title: "title1", siteName:["www.test.com"]}],
        }
     },
     watch: {

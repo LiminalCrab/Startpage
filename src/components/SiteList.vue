@@ -14,11 +14,11 @@
 
        <ul class="c-ul">
            <site
-           v-for="(site) in item.siteName" 
-           :key="site"
+           v-for="(site, index) in item.siteName" 
+           :key="index"
            :siteName="site"
            @site-remove="removeSite(site)"
-           @edit-el="editSite(site, $event)"
+           @edit-el="editSite(index, $event)"
            />
            <!-- addSite method from CrateSite.vue -->
         <create-site class="c-createsite" @on-new-site="addSite($event)" />
@@ -31,6 +31,7 @@
 import Site from "./Site.vue"
 import createSite from "./CreateSite.vue"
 import '@/assets/list.css'
+import Vue from 'vue'
 
 //icon
 import NavChangeBtn from './NavChangeBtn.vue';
@@ -38,7 +39,7 @@ import NavChangeBtn from './NavChangeBtn.vue';
 let uuid = 1;
 
 export default {
-    name: "site-list",
+    name: "siteList",
     props: {
         siteListLabel: String,
         item: {
@@ -66,7 +67,9 @@ export default {
        // this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
         // console.log("Getting storage from SiteList.vue in Site")
     },
+    computed:{
 
+    },
     methods: {
         addSite(newSite){
             if(this.sites.length < 15){
@@ -80,9 +83,10 @@ export default {
         removeSite(removedSite){
             this.item.siteName = this.item.siteName.filter(site => site !== removedSite);
         },
-        //editSite(item, newSiteName){
-            //item.siteName = newSiteName;
-       // },
+        editSite(index, newSiteName){
+            Vue.set(this.item.siteName, index, newSiteName)
+            console.log(index, newSiteName)
+        },
         changeLabel(){
             if (this.siteListLabel_d.length > 0){
             this.$emit("changeLabel", this.siteListLabel_d);
