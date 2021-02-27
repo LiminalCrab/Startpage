@@ -14,11 +14,9 @@
 
        <ul class="c-ul">
            <site
-           v-for="(site, index) in sites" 
-           :key="index"
-           :siteName="site.siteName"
-           :staticRef="site.staticRef"
-           :aIdent="sites.aIdent"
+           v-for="(site) in item.siteName" 
+           :key="site"
+           :siteName="site"
            @site-remove="removeSite(site)"
            @edit-el="editSite(site, $event)"
            />
@@ -36,13 +34,17 @@ import '@/assets/list.css'
 
 //icon
 import NavChangeBtn from './NavChangeBtn.vue';
-const SKEY = "site-list-data";
+// const SKEY = "site-list-data";
 let uuid = 1;
 
 export default {
     name: "site-list",
     props: {
         siteListLabel: String,
+        item: {
+            type: Object,
+            required: true
+        },
     },
     data(){
         return {
@@ -58,30 +60,29 @@ export default {
     },
     beforeCreate(){
     this.uuid = uuid.toString();
-        },
+    },
 
     created(){
-        this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
-        console.log("Getting storage from SiteList.vue in Site")
+       // this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
+        // console.log("Getting storage from SiteList.vue in Site")
     },
 
     methods: {
         addSite(newSite){
             if(this.sites.length < 15){
-            this.sites.push({ aIdent: ++uuid, staticRef: "https://", siteName: newSite });
-            localStorage.setItem(SKEY, JSON.stringify(this.sites));
+            this.item.siteName.push(newSite);
+           // localStorage.setItem(SKEY, JSON.stringify(this.sites));
             } else {
                 console.log("You can't add anymore.")
             }
                     },
         // create a new array (callback)
         removeSite(removedSite){
-            this.sites = this.sites.filter(site => site !== removedSite);
-            localStorage.setItem(SKEY, JSON.stringify(this.sites))
+            this.item.siteName = this.item.siteName.filter(site => site !== removedSite);
         },
-        editSite(site, newSiteName){
-            site.siteName = newSiteName;
-        },
+        //editSite(item, newSiteName){
+            //item.siteName = newSiteName;
+       // },
         changeLabel(){
             if (this.siteListLabel_d.length > 0){
             this.$emit("changeLabel", this.siteListLabel_d);

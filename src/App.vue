@@ -32,30 +32,38 @@ export default {
     //icons
     NavListBtn
   
-  },
-  beforeCreate(){
+   },
+    beforeCreate(){
     this.uuid = uuid.toString();
-  },
-   created(){
+    },
+     created(){
     // This is weird. It sometimes only works with this.item?
     //So if data is deleted from the localStorage, you must use this.item
     //if does not exist, create it.
-   if(localStorage.getItem(AKEY)){
+    if(localStorage.getItem(AKEY)){
       this.array = JSON.parse(localStorage.getItem(AKEY))
       console.log("Default AKEY existed.")
     }
     else {
       //this.item = localStorage.setItem(AKEY,'[id:"1"]');
-      this.array = [{id: 1}]
+      this.array = [{id: "1", title: "title1", siteName:["www.penis.com"]}]
       console.log("Created.") }
-  },
+    },
 
-  data(){
+    data(){
     return { 
-      array: [{id: "1"}]
-      };
-  },
-  methods:{
+      array: [{id: "1", title: "title1", siteName:["www.penis.com"]}],
+       }
+    },
+    watch: {
+      array: function(val){
+      localStorage.setItem(AKEY, JSON.stringify(val))
+      console.log("watch called.")
+      }
+
+    },
+
+    methods:{
     addListContainer(){
       console.log("addList clicked")
       if(this.array.length < 5){

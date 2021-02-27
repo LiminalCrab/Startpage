@@ -1,6 +1,6 @@
 <template>
     <div class="parent-listcontainer">
-        <sitelist @changeLabel="setSiteLabel" :siteListLabel="siteListLabel_d"/>
+        <sitelist @changeLabel="setSiteLabel" :siteListLabel="siteListLabel_d" :item="item"/>
     </div>
 </template>
 
@@ -8,8 +8,6 @@
 
 import sitelist from "./SiteList.vue"
 import '@/assets/list.css'
-
-const LKey = "list-label-data"
 
 export default {
     props: {
@@ -20,14 +18,13 @@ export default {
     },
     data(){
         return {
-            siteListLabel_d: "Title",
-
+            siteListLabel_d: "Title"
         };
     },
     methods: {
         setSiteLabel(siteListLabel){
+            this.item.title = siteListLabel;
             this.siteListLabel_d = siteListLabel;
-            localStorage.setItem(LKey, JSON.stringify(this.siteListLabel_d));
         },
     },
     components: { sitelist }  
