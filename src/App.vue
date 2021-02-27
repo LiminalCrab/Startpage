@@ -36,18 +36,25 @@ export default {
   beforeCreate(){
     this.uuid = uuid.toString();
   },
+   created(){
+    // This is weird. It sometimes only works with this.item?
+    //So if data is deleted from the localStorage, you must use this.item
+    //if does not exist, create it.
+   if(localStorage.getItem(AKEY)){
+      this.array = JSON.parse(localStorage.getItem(AKEY))
+      console.log("Default AKEY existed.")
+    }
+    else {
+      //this.item = localStorage.setItem(AKEY,'[id:"1"]');
+      this.array = [{id: 1}]
+      console.log("Created.") }
+  },
+
   data(){
     return { 
       array: [{id: "1"}]
       };
   },
-  created(){
-
-    //This sometimes only works with this.array?
-    this.item = JSON.parse(localStorage.getItem(AKEY))
-    console.log("Created.")
-  },
-
   methods:{
     addListContainer(){
       console.log("addList clicked")

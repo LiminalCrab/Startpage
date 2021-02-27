@@ -46,9 +46,9 @@ export default {
     },
     data(){
         return {
-            sites: [ {aIdent:1, staticRef: "https://", siteName: "www.cnn.com" }, 
-                     {aIdent:2, staticRef: "https://", siteName: "www.nyt.com" }, 
-                     {aIdent:3, staticRef: "https://", siteName: "washingtonpost.com" }
+            sites: [ {aIdent: "1", staticRef: "https://", siteName: "www.cnn.com" }, 
+                     {aIdent: "2", staticRef: "https://", siteName: "www.nyt.com" }, 
+                     {aIdent: "3", staticRef: "https://", siteName: "washingtonpost.com" }
             ],
             // Shouldn't edit props so I made this which is based off
             // the value of the prop but not using the prop directly.
