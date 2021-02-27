@@ -1,7 +1,7 @@
 <template>
 <div class="c-site-container">
     <li class="c-list"> 
-        <span class="c-spanlol"><a class="c-anc" :href="staticRef + siteName">{{siteName}}</a>
+        <span class="c-spanlol"><a class="c-anc" :href="staticRef + siteName">{{ siteName }}</a>
          <!-- array {{ siteName }} --> </span> 
         <button class="c-btn" @click="doEdit() ; isHidden = !isHidden"><nav-edit-btn/></button>
         <button class="c-btn" @click="$emit('site-remove')"><nav-remove-btn/></button>
@@ -39,7 +39,6 @@ export default {
     props: {
         siteName: String,
         staticRef: String,
-        aIdent: String,
     },
     methods: {
         doEdit(){

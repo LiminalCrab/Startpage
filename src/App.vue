@@ -36,19 +36,22 @@ export default {
   beforeCreate(){
     this.uuid = uuid.toString();
   },
-
   data(){
     return { 
-      array: [{id: 1}] 
+      array: [{id: "1"}]
       };
   },
   created(){
-    this.array = JSON.parse(localStorage.getItem(AKEY))
+
+    //This sometimes only works with this.array?
+    this.item = JSON.parse(localStorage.getItem(AKEY))
+    console.log("Created.")
   },
 
   methods:{
     addListContainer(){
-      if(this.array.length < 3){
+      console.log("addList clicked")
+      if(this.array.length < 5){
     this.array.push({id: ++uuid})
     localStorage.setItem(AKEY, JSON.stringify(this.array))
       } else {

@@ -1,7 +1,7 @@
 <template>
    <div class="child-sitelist-container">
 
-        <span class="c-label-span">{{  siteListLabel }}</span>
+        <span class="c-label-span">{{ siteListLabel }}</span>
 
        <form class="c-form" @submit.prevent="changeLabel()">
            <input class="c-input"
@@ -46,9 +46,9 @@ export default {
     },
     data(){
         return {
-            sites: [ {aIdent:"1", staticRef: "https://", siteName: "www.cnn.com" }, 
-                     {aIdent:"2", staticRef: "https://", siteName: "www.nyt.com" }, 
-                     {aIdent:"3", staticRef: "https://", siteName: "washingtonpost.com" }
+            sites: [ {aIdent:1, staticRef: "https://", siteName: "www.cnn.com" }, 
+                     {aIdent:2, staticRef: "https://", siteName: "www.nyt.com" }, 
+                     {aIdent:3, staticRef: "https://", siteName: "washingtonpost.com" }
             ],
             // Shouldn't edit props so I made this which is based off
             // the value of the prop but not using the prop directly.
@@ -61,7 +61,7 @@ export default {
         },
 
     created(){
-        this.sites = JSON.parse(localStorage.getItem(SKEY) || JSON.stringify(this.sites))
+        this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
         console.log("Getting storage from SiteList.vue in Site")
     },
 
