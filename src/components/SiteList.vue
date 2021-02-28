@@ -61,7 +61,7 @@ export default {
             } else {
                 console.log("You can't add anymore.")
             }
-                    },
+        },
         // create a new array (callback)
         removeSite(removedSite){
             this.item.siteName = this.item.siteName.filter(site => site !== removedSite);

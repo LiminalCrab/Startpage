@@ -40,38 +40,27 @@ export default {
     if(localStorage.getItem(AKEY)){
       this.array = JSON.parse(localStorage.getItem(AKEY))
       console.log("Default AKEY existed.")
-    }
-    else {
+    } else {
       //this.item = localStorage.setItem(AKEY,'[id:"1"]');
       this.array = [{id: "1", title: "title1", siteName:["www.test.com"]}]
       console.log("Created.") }
   },
-
   data(){
     return { 
       array: [{id: "1", title: "title1", siteName:["www.test.com"]}],
       }
     },
-  /** watch: {
+  watch: {
     array: function(val){
     localStorage.setItem(AKEY, JSON.stringify(val))
     console.log("watch called.")
     }
   },
-    **/
-  computed: {
-    arrayData: function() {
-    return localStorage.setItem(AKEY, JSON.stringify(this.array))
-    },
-
-  },
-
   methods:{
     addListContainer(){
       console.log("addList clicked")
       if(this.array.length < 5){
-    this.array.push({id: JSON.stringify(++uuid)})
-    localStorage.setItem(AKEY, JSON.stringify(this.array))
+        this.array.push({id: JSON.stringify(++uuid)})
     } else {
       console.log("You can't create more of these components...")
       }
