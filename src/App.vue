@@ -51,11 +51,15 @@ export default {
       }
     },
   watch: {
-    array: function(val){
-    localStorage.setItem(AKEY, JSON.stringify(val))
-    console.log("watch called.")
-    }
+    array: { 
+      handler: function(val) { 
+        localStorage.setItem(AKEY, JSON.stringify(val))
+        console.log("App.vue/Watch: listContainer saved.", val)
+      },
+      deep: true
+    },
   },
+  
   methods:{
     addListContainer(){
       console.log("addList clicked")

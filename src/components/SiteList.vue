@@ -56,8 +56,8 @@ export default {
     methods: {
         addSite(newSite){
             if(this.item.siteName.length < 5){
-            this.item.siteName.push(newSite);
-            console.log("Sitelist.vue/methods/addSite:", newSite);
+                this.item.siteName.push(newSite);
+                console.log("Sitelist.vue/methods/addSite:", newSite);
             } else {
                 console.log("You can't add anymore.")
             }
@@ -72,9 +72,9 @@ export default {
         },
         changeLabel(){
             if (this.siteListLabel_d.length > 0){
-            this.$emit("changeLabel", this.siteListLabel_d);
-            console.log("Sitelist.vue/methods/changeLabel:", this.siteListLabel_d);
-            this.siteListLabel_d = "";
+                this.$emit("changeLabel", this.siteListLabel_d);
+                console.log("Sitelist.vue/methods/changeLabel:", this.siteListLabel_d);
+                this.siteListLabel_d = "";
             }
         }
     },
