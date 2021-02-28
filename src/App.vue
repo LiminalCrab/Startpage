@@ -54,7 +54,7 @@ export default {
     array: { 
       handler: function(val) { 
         localStorage.setItem(AKEY, JSON.stringify(val))
-        console.log("App.vue/Watch: listContainer saved.", val)
+        console.log("App.vue/Watch: new array data saved", val)
       },
       deep: true
     },

@@ -1,6 +1,6 @@
 <template>
     <div class="parent-listcontainer">
-        <sitelist @changeLabel="setSiteLabel" :siteListLabel="siteListLabel_d" :item="item"/>
+        <sitelist @changeLabel="setSiteLabel" :siteListLabel="item.title" :item="item"/>
     </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
     },
     data(){
         return {
-            siteListLabel_d: "Title"
+            siteListLabel_d: "Test"
         };
     },
     methods: {
