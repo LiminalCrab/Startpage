@@ -1,18 +1,38 @@
+<!-- This is weather parent. -->
 <template>
-    <div></div>
+<div> 
+<span> {{ infodata }} </span>
+</div>
 </template>
 
 <script>
-//api.openweathermap.org/data/2.5/weather?q=Atlanta,GA,US&appid=c0700da2a320f44181f321de952c8dc3
-// {"coord":{"lon":-84.388,"lat":33.749},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"base":"stations","main":
-// {"temp":275.34,"feels_like":272.84,"temp_min":273.15,"temp_max":276.48,"pressure":1017,"humidity":80},"visibility":10000,"wind":{"speed":0.55,"deg":259},"clouds":{"all":1},"dt":1612592483,"sys":
-// {"type":1,"id":4155,"country":"US","sunrise":1612614607,"sunset":1612653194},"timezone":-18000,"id":4180439,"name":"Atlanta","cod":200} /
-export default {
-    
-}
 
+//okay weird shit to see if Axios is working...
+let apiURI = 'http://api.openweathermap.org/data/2.5/weather?q=Atlanta,GA,US&appid=c0700da2a320f44181f321de952c8dc3'
+
+export default {
+    name: "weather",
+    components: {
+
+    },
+    data: function(){
+       return { 
+           infodata: null,
+           loading: true,
+           errored: false,
+       };
+    },
+    mounted: function(){
+        this.fetchWeatherAPI()
+    },
+
+    methods:{
+        fetchWeatherAPI(){
+        this.$http.get(apiURI)
+        .then(response => (this.infodata = response.data.bpi))
+        console.log("Weather.vue/methods/fetchWeatherAPI() called.", this.infodata)
+        }
+    }
+}
 </script>
 
-<style scoped>
-
-</style>

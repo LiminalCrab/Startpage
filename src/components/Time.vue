@@ -16,7 +16,7 @@ export default {
     mounted: function(){
         setInterval(() => {
             this.date = moment().format('h:mm a');
-        }, 60000);
+        }, 50000);
     }
 }
 

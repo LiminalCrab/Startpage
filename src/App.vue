@@ -2,6 +2,7 @@
   <div id="app">
   <!-- Injection goes here -->
     <time-component/>
+    <weather/>
     <table class="root-tbl">
       <tr class="root-tbl-tr">
         <button class="root-btn" @click="addListContainer"><nav-list-btn/></button>
@@ -16,6 +17,7 @@
 <script> // Import components here.
 import TimeComponent from './components/Time.vue'
 import listcontainer from "./components/ListContainer.vue"
+import weather from './components/Weather.vue'
 
 //Icons
 import NavListBtn from './components/NavListBtn.vue'
@@ -28,6 +30,7 @@ export default {
   components: {
     TimeComponent,
     listcontainer,
+    weather,
 
     //icons
     NavListBtn

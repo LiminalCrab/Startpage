@@ -45,7 +45,7 @@ export default {
             required: true
         },
     },
-    data(){
+    data: function(){
         return {
             // Shouldn't edit props so I made this which is based off
             // the value of the prop but not using the prop directly.
