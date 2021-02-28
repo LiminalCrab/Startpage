@@ -1,12 +1,11 @@
 <!-- This is weather parent. -->
 <template>
 <div> 
-<span> {{ infodata }} </span>
+<span> {{ apidata }} </span>
 </div>
 </template>
 
 <script>
-//okay weird shit to see if Axios is working...
 let apiURI = 'http://api.openweathermap.org/data/2.5/weather?q=Atlanta,GA,US&appid=c0700da2a320f44181f321de952c8dc3'
 
 export default {
@@ -16,7 +15,12 @@ export default {
     },
     data: function(){
        return { 
-           infodata: null,
+           apidata: {
+               city: 'None',
+               country: 'None',
+               temperature: 'None'
+
+           },
            loading: true,
            errored: false,
        };
@@ -28,8 +32,10 @@ export default {
     methods:{
         fetchWeatherAPI(){
             this.$http.get(apiURI)
-            .then(function(response) { console.log(response) });
-            console.log("Weather.vue/methods/fetchWeatherAPI() called.", this.response)
+            .then(function(response){ 
+                console.log(response)});
+
+            console.log("Weather.vue/methods/fetchWeatherAPI() called.")
         }
     }
 }
