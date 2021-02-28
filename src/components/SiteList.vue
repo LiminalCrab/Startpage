@@ -35,8 +35,6 @@ import Vue from 'vue'
 
 //icon
 import NavChangeBtn from './NavChangeBtn.vue';
-// const SKEY = "site-list-data";
-let uuid = 1;
 
 export default {
     name: "siteList",
@@ -54,14 +52,6 @@ export default {
             siteListLabel_d: ""
 
         };
-    },
-    beforeCreate(){
-    this.uuid = uuid.toString();
-    },
-
-    created(){
-       // this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
-        // console.log("Getting storage from SiteList.vue in Site")
     },
     methods: {
         addSite(newSite){
@@ -83,6 +73,7 @@ export default {
         changeLabel(){
             if (this.siteListLabel_d.length > 0){
             this.$emit("changeLabel", this.siteListLabel_d);
+            console.log("Sitelist.vue/methods/changeLabel:", this.siteListLabel_d);
             this.siteListLabel_d = "";
             }
         }
