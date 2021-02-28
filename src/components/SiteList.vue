@@ -49,10 +49,6 @@ export default {
     },
     data(){
         return {
-            sites: [ {aIdent: "1", staticRef: "https://", siteName: "www.cnn.com" }, 
-                     {aIdent: "2", staticRef: "https://", siteName: "www.nyt.com" }, 
-                     {aIdent: "3", staticRef: "https://", siteName: "washingtonpost.com" }
-            ],
             // Shouldn't edit props so I made this which is based off
             // the value of the prop but not using the prop directly.
             siteListLabel_d: ""
@@ -67,14 +63,11 @@ export default {
        // this.sites = JSON.parse(localStorage.getItem(SKEY) || "[]")
         // console.log("Getting storage from SiteList.vue in Site")
     },
-    computed:{
-
-    },
     methods: {
         addSite(newSite){
-            if(this.sites.length < 15){
+            if(this.item.siteName.length < 5){
             this.item.siteName.push(newSite);
-           // localStorage.setItem(SKEY, JSON.stringify(this.sites));
+            console.log("Sitelist.vue/methods/addSite:", newSite);
             } else {
                 console.log("You can't add anymore.")
             }
