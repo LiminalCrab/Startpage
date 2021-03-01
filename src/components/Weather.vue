@@ -1,9 +1,8 @@
-<!-- This is weather parent. -->
 <template>
 <div class="weather">
     <div class="location-container">
-        <div class="p-location"> {{ this.wdata.name }}, {{ this.wdata.sys.country }} </div>
-        <div class="p-temp"> {{ Math.round(this.wdata.main.temp) }} </div>
+        <div class="p-location"> {{ wdata.name }}, {{ wdata.sys.country }} </div>
+        <div class="p-temp"> {{ Math.round(wdata.main.temp) }} </div>
     </div>
 </div>
 </template>
@@ -20,10 +19,7 @@ export default {
            api_key: 'c0700da2a320f44181f321de952c8dc3',
            api_URI: 'http://api.openweathermap.org/data/2.5/',
            wdata: { },
-           city: '',
-           state: '',
            getLocation: null,
-           fetchData: '',
            long: '',
            lat: '',
        }
