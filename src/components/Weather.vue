@@ -2,7 +2,7 @@
 <template>
 <div class="weather">
     <div class="location-container">
-        <div class="p-location" v-if="city !== ''">{{ this.city }}, {{ wdata.sys.country }} </div>
+        <div class="p-location"> {{ this.wdata.name}}</div>
  
     </div>
 </div>
@@ -67,6 +67,10 @@ export default {
                 }
             }
         },
+        setData(results){
+            this.wdata = results;
+            console.log(this.wdata.main.temp)
+        }
     }
 }
 </script>
