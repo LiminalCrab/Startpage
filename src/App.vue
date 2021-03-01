@@ -5,13 +5,14 @@
     <weather/>
     <div class="search"> 
       <form method="get" action="http://www.google.com/search">
-      <input type='text' name='q' size="40" maxlength="255" value="" placeholder="Search..."/>      </form>
+      <input type='text' name='q' size="40" maxlength="255" value="" placeholder="Search..."/></form>
     </div>
     <table class="root-tbl">
       <tr class="root-tbl-tr">
         <button class="root-btn" @click="addListContainer"><nav-list-btn/></button>
         <td class="root-td" v-for="item in array" :key="item.id">
           <listcontainer class="root-listcontainer-i" :item="item"/>
+           <button class="root" @click="removeContainer(array.id)"> X</button>
           </td>
       </tr>
     </table>
@@ -76,6 +77,10 @@ export default {
       console.log("You can't create more of these components...")
       }
     },
+    removeContainer(itemid){
+      console.log(itemid)
+      this.array.splice(itemid)
+    }
   },
 };
 </script>
