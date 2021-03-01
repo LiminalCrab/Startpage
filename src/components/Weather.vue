@@ -67,11 +67,6 @@ export default {
                 }
             }
         },
-        setData(results){
-            this.wdata = results;
-            let weatherData = this.wdata[0];
-            console.log(weatherData)
-        }
     }
 }
 </script>
