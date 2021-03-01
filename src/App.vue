@@ -3,6 +3,10 @@
   <!-- Injection goes here -->
     <time-component/>
     <weather/>
+    <div class="search"> 
+      <form method="get" action="http://www.google.com/search">
+      <input type='text' name='q' size="40" maxlength="255" value="" placeholder="Search..."/>      </form>
+    </div>
     <table class="root-tbl">
       <tr class="root-tbl-tr">
         <button class="root-btn" @click="addListContainer"><nav-list-btn/></button>

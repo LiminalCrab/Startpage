@@ -2,12 +2,16 @@
 <div class="weather">
     <div class="location-container">
         <div class="p-location"> {{ wdata.name }}, {{ wdata.sys.country }} </div>
-        <div class="p-temp"> {{ Math.round(wdata.main.temp) }} </div>
+        
+        <div class="p-temp"> {{ Math.round(wdata.main.temp) }} °F </div>
     </div>
 </div>
 </template>
 
 <script>
+
+import '@/assets/list.css'
+
 
 export default {
     name: "weather",
