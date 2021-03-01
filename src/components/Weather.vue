@@ -1,12 +1,11 @@
 <!-- This is weather parent. -->
 <template>
 <div> 
-<span> {{ apidata }} </span>
+<span> {{ wdata }} </span>
 </div>
 </template>
 
 <script>
-let apiURI = 'http://api.openweathermap.org/data/2.5/weather?q=Atlanta,GA,US&appid=c0700da2a320f44181f321de952c8dc3'
 
 export default {
     name: "weather",
@@ -15,27 +14,53 @@ export default {
     },
     data: function(){
        return { 
-           apidata: {
-               city: 'None',
-               country: 'None',
-               temperature: 'None'
-
-           },
-           loading: true,
-           errored: false,
+           api_key: 'c0700da2a320f44181f321de952c8dc3',
+           api_URI: 'http://api.openweathermap.org/data/2.5/',
+           wdata: {},
+           city: '',
+           state: '',
+           getLocation: null,
+           fetchData: ''
        };
     },
     mounted: function(){
-        this.fetchWeatherAPI()
+
+        for (var i = 0; i < 2; i++){
+            if (navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(pos => {
+                    this.getLocation = true;
+                    long = pos.coords.longitude;
+                    lat = pos.coords.latitude;
+                    fetch('${this.api_URI}weather?lat=${lat}$lon=${long}$units=imperial&appid=${this.api_key}')
+                        .then (res => {
+                            return res.json();
+                        }).then(res => { 
+                            this.setResults(res);
+                        });
+                }), (error) => {
+                    if (error.code == error.PERMISSION_DENIED){
+                        this.getLocation = false;
+                    }
+                }
+            }
+        }
     },
 
-    methods:{
-        fetchWeatherAPI(){
-            this.$http.get(apiURI)
-            .then(function(response){ 
-                console.log(response)});
-
-            console.log("Weather.vue/methods/fetchWeatherAPI() called.")
+    methods: {
+        getWeatherData(event) {
+            for (var i = 0; i < 2; i++){
+                if (event.key == "Enter" ){
+                    if (this.fetchData.split(",").length == 2){
+                        this.city = this.fetchData.split(",")[0].trim();
+                        this.city = this.fetchData.split(",")[1].trim();
+                        console.log(this.fetchData);
+                    }
+                    fetch('${this.api_URI}weather?q=${this.state},${this.city}&appid=${this.api_key}')
+                        .then( response => {
+                            return response.json();
+                          });
+                }
+            }
         }
     }
 }
