@@ -70,7 +70,7 @@ export default {
   methods:{
     addListContainer(){
       console.log("addList clicked")
-      if(this.array.length < 5){
+      if(this.array.length < 4){
         this.array.push({id: JSON.stringify(++uuid), title: "title1", siteName:["www.test.com"]})
     } else {
       console.log("You can't create more of these components...")

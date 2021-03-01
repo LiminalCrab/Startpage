@@ -19,7 +19,7 @@ input[type=text]:focus{
 
 .parent-listcontainer{
     padding: 20px;
-    margin-left: 20px;
+    margin-left: 60px;
     margin-top: 200px;
     max-width: 400px;
     border: 2px dotted;
@@ -76,5 +76,7 @@ input[type=text]:focus{
     padding-top: 100px;
 }
 
-
+.date-time{
+    font-size: 15px
+}
 

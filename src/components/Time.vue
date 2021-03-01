@@ -1,11 +1,13 @@
 <template>
-    <div>
+    <div class="date-time">
         <h1> {{ date }} </h1>
     </div>
 </template>
 
 <script>
 import moment from 'moment'
+import '@/assets/list.css'
+
 
 export default {
     name: "get-time",
