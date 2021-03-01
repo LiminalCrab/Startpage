@@ -2,8 +2,8 @@
 <template>
 <div class="weather">
     <div class="location-container">
-        <div class="p-location"> {{ this.wdata.name}}</div>
- 
+        <div class="p-location"> {{ this.wdata.name }}, {{ this.wdata.sys.country }} </div>
+        <div class="p-temp"> {{ Math.round(this.wdata.main.temp) }} </div>
     </div>
 </div>
 </template>
@@ -29,7 +29,6 @@ export default {
        }
     },
     mounted: function() {
-
         for (var i = 0; i < 2; i++){
             if (navigator.geolocation){
                 navigator.geolocation.getCurrentPosition(pos => {
@@ -37,7 +36,7 @@ export default {
                     this.long = pos.coords.longitude;
                     this.lat = pos.coords.latitude;
                     console.log(this.long, this.lat)
-                    fetch(`${this.api_URI}weather?lat=${this.lat}&lon=${this.long}&appid=${this.api_key}`)
+                    fetch(`${this.api_URI}weather?lat=${this.lat}&lon=${this.long}&units=imperial&appid=${this.api_key}`)
                         .then (res => {
                             return res.json();
                         }).then(res => { 
@@ -50,23 +49,7 @@ export default {
                 }
             }}
     },
-
     methods: {
-        getWeatherData(e){
-            for (var i = 0; i < 2; i++){
-                if (e.key == "Enter" ){
-                    if (this.fetchData.split(",").length == 2){
-                        this.city = this.fetchData.split(",")[0].trim();
-                        this.city = this.fetchData.split(",")[1].trim();
-                        console.log(this.fetchData);
-                    }
-                    fetch(`${this.api_URI}weather?q=${this.state},${this.city}&appid=${this.api_key}`)
-                        .then(res => {
-                            return res.json();
-                          }).then(this.setData);
-                }
-            }
-        },
         setData(results){
             this.wdata = results;
             console.log(this.wdata.main.temp)
