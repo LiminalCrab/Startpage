@@ -1,14 +1,9 @@
 <!-- This is weather parent. -->
 <template>
 <div class="weather">
-    <div class="search-weather">
-        <input
-        type="text"
-        class="search-bar"
-        placeholder="search..."
-        v-model="fetchData"
-        @keypress="getWeatherData"
-        />
+    <div class="location-container">
+        <div class="p-location" v-if="city !== ''">{{ this.city }}, {{ wdata.sys.country }} </div>
+ 
     </div>
 </div>
 </template>
@@ -24,14 +19,14 @@ export default {
        return { 
            api_key: 'c0700da2a320f44181f321de952c8dc3',
            api_URI: 'http://api.openweathermap.org/data/2.5/',
-           wdata: {},
+           wdata: { },
            city: '',
            state: '',
            getLocation: null,
            fetchData: '',
            long: '',
            lat: '',
-       };
+       }
     },
     mounted: function() {
 
@@ -42,11 +37,11 @@ export default {
                     this.long = pos.coords.longitude;
                     this.lat = pos.coords.latitude;
                     console.log(this.long, this.lat)
-                    fetch(`${this.api_URI}weather?lat=${this.lat}$lon=${this.long}$units=imperial&appid=${this.api_key}`)
+                    fetch(`${this.api_URI}weather?lat=${this.lat}&lon=${this.long}&appid=${this.api_key}`)
                         .then (res => {
                             return res.json();
                         }).then(res => { 
-                            this.setResults(res);
+                            this.setData(res);
                         });
                 }), (error) => {
                     if (error.code == error.PERMISSION_DENIED){
@@ -68,14 +63,14 @@ export default {
                     fetch(`${this.api_URI}weather?q=${this.state},${this.city}&appid=${this.api_key}`)
                         .then(res => {
                             return res.json();
-                          }).then(this.setResults);
+                          }).then(this.setData);
                 }
             }
         },
         setData(results){
             this.wdata = results;
-            let weatherData = this.wdata.wdata[0].main;
-            console.log(weatherData.toLowerCase())
+            let weatherData = this.wdata[0];
+            console.log(weatherData)
         }
     }
 }
