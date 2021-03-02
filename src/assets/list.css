@@ -1,5 +1,3 @@
-/* Root CSS is done in the Root style tag.*/
-
 input[type=text]{
     background-color: rgba(182, 178, 178, 0.2);
 }
@@ -14,15 +12,32 @@ input[type=text]:focus{
 }
 
 .c-createsite{
-    padding-top: 15px;
+    padding-top: 70px;
+
+}
+
+.c-list{
+    overflow: hidden;
+}
+
+.c-form{
+    margin-bottom: 50px;
+    min-width: 50px
 }
 
 .parent-listcontainer{
-    padding: 20px;
-    margin-left: 60px;
-    margin-top: 200px;
-    max-width: 400px;
-    border: 2px dotted;
+    width:240px;
+    height: -240px;
+    border:1px solid #ccc;
+    margin:30px;
+    padding:40px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+    box-sizing:content-box;
     background-color: rgb(255, 255, 255);
 }
 
@@ -46,6 +61,7 @@ input[type=text]:focus{
 
 .c-site-container a{
     color: inherit;
+    
 }
 
 .c-btn-change{
@@ -59,7 +75,7 @@ input[type=text]:focus{
 }
 
 .c-label-span{
-    font-size: 17px;
+    font-size: 30px;
 }
 
 .p-location{
@@ -79,4 +95,3 @@ input[type=text]:focus{
 .date-time{
     font-size: 15px
 }
-

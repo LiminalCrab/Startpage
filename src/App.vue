@@ -7,15 +7,10 @@
       <form method="get" action="http://www.google.com/search">
       <input type='text' name='q' size="40" maxlength="255" value="" placeholder="Search..."/></form>
     </div>
-    <table class="root-tbl">
-      <tr class="root-tbl-tr">
-        <button class="root-btn" @click="addListContainer"><nav-list-btn/></button>
-        <td class="root-td" v-for="item in array" :key="item.id">
+          <button class="root-btn" @click="addListContainer">+</button>
+      <div class="root-td" v-for="item in array" :key="item.id">
           <listcontainer class="root-listcontainer-i" :item="item"/>
-           <button class="root" @click="removeContainer(array.id)"> X</button>
-          </td>
-      </tr>
-    </table>
+      </div>
   </div>
 </template>
 
@@ -25,8 +20,6 @@ import listcontainer from "./components/ListContainer.vue"
 import weather from './components/Weather.vue'
 
 //Icons
-import NavListBtn from './components/NavListBtn.vue'
-
 const AKEY = "list-obj-storage";
 let uuid = 1;
 
@@ -37,9 +30,7 @@ export default {
     listcontainer,
     weather,
 
-    //icons
-    NavListBtn
-  
+    //icons  
   },
   beforeCreate(){
     this.uuid = uuid.toString();
@@ -77,10 +68,6 @@ export default {
       console.log("You can't create more of these components...")
       }
     },
-    removeContainer(itemid){
-      console.log(itemid)
-      this.array.splice(itemid)
-    }
   },
 };
 </script>
@@ -97,14 +84,18 @@ export default {
 }
 
 .root-btn{
-  cursor: pointer;
+    cursor: pointer;
     border: none;
     background: none;
     cursor: pointer;
-    margin-left: 310px;
-    margin-top: 190px;
-    padding: 0;
+    padding: 0px;
     outline:none;
+    font-size: 30px;
 }
+
+.root-td{
+  display: inline-block;
+}
+
 
 </style>
