@@ -16,18 +16,16 @@ input[type=text]:focus{
 
 }
 
-.c-list{
-    overflow: hidden;
-}
-
 .c-form{
     margin-bottom: 50px;
     min-width: 50px
 }
 
 .parent-listcontainer{
+
+    display: inline-grid;
     width:240px;
-    height: -240px;
+    height: 280px;
     border:1px solid #ccc;
     margin:30px;
     padding:40px;
@@ -49,6 +47,16 @@ input[type=text]:focus{
 .c-anc{
     text-decoration: none;
     color: #000;
+}
+
+.c-ul{
+    display: inline-grid;
+    grid-row-gap: 1px;
+
+}
+
+.c-form-createsite{
+    display: flex;
 }
 
 .c-list{
@@ -90,6 +98,7 @@ input[type=text]:focus{
 
 .search{
     padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .date-time{
