@@ -51,7 +51,7 @@ input[type=text]:focus{
 
 .c-ul{
     display: inline-grid;
-    grid-template-rows: 20px 20px 20px 20px;
+    grid-template-rows: auto auto 20px 20px 15px;
     justify-items: center;
     align-items: end;
     margin-bottom: 20px;
@@ -63,8 +63,7 @@ input[type=text]:focus{
     grid-template-rows: 20px 20px 50px 40px;
 }
 .c-createsite{
-    grid-row-start: 1;
-    grid-row-end: 1;
+
     
 
 }
