@@ -20,8 +20,10 @@
            @edit-el="editSite(index, $event)"
            />
            <!-- addSite method from CrateSite.vue -->
+        </ul>
+    <div class="grid-create-site">
         <create-site class="c-createsite" @on-new-site="addSite($event)" />
-      </ul>
+    </div>
     </div>
 </template>
 
@@ -54,7 +56,7 @@ export default {
     },
     methods: {
         addSite(newSite){
-            if(this.item.siteName.length < 5){
+            if(this.item.siteName.length < 4){
                 this.item.siteName.push(newSite);
                 console.log("Sitelist.vue/methods/addSite:", newSite);
             } else {

@@ -25,7 +25,7 @@ input[type=text]:focus{
 
     display: inline-grid;
     width:240px;
-    height: 280px;
+    height: 300px;
     border:1px solid #ccc;
     margin:30px;
     padding:40px;
@@ -51,12 +51,22 @@ input[type=text]:focus{
 
 .c-ul{
     display: inline-grid;
-    grid-row-gap: 1px;
+    grid-template-rows: 20px 20px 20px 20px;
+    justify-items: center;
+    align-items: end;
+    margin-bottom: 20px;
 
 }
 
-.c-form-createsite{
-    display: flex;
+.grid-create-site{
+    display: inline-grid;
+    grid-template-rows: 20px 20px 50px 40px;
+}
+.c-createsite{
+    grid-row-start: 1;
+    grid-row-end: 1;
+    
+
 }
 
 .c-list{
