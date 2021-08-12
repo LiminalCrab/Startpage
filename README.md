@@ -1,4 +1,3 @@
 # startpage
-This is a mockup startpage I'm making for Firefox.
-It will never actually function as a startpage, because this requires a server to run, but I am just using it as a simple tool try Vue out.
+Startpage is a mock startup page for Firefox I used to learn the Vue 2 framework and reacquaint myself with JavaScript. It fetches the weather for your current location, and allows you to create multiple different lists for websites with their own categories. 
 
